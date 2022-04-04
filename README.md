@@ -8,14 +8,6 @@ To see list of dependency, open requirements.txt with in the project folder eg `
 
 Note: Docker is required to build and run the application
 
-## Testing the project
-To test the project, run the command below
-
-```
-cd Python-assessment-N-O-4-4-2022/app
-pytest
-```
-
 ### Deployment requirements
 - Terraform
 - AWS
@@ -35,6 +27,17 @@ docker build -t image-name .
 docker run -p5000:5000 image-name
 ```
 Vist http://localhost:5000 to view the application
+
+## Testing the project
+To test (unit test) the project locally, you can create an environment before runing the project. Sample command below
+
+```
+cd Python-assessment-N-O-4-4-2022/app
+python3 -m venv env
+source env/bin/activate
+pip3 install -r requirements.txt
+pytest
+```
 
 ## How to deploy application
 To provision infrastructure and deploy follow the below steps
@@ -59,3 +62,4 @@ To view the application vist the link printed on the console after you must have
 Note: 
 - Remote backend is not enable in terraform
 - You have to the ECR repository url with in the variable.tf file before deploying the actually application.
+- Automatic testing and automatic deploy is not implemented
